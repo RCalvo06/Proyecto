@@ -38,7 +38,7 @@ public abstract class Losa {
 
     public abstract boolean estadoLosa();
 
-    public abstract Pieza tomarPieza();
+    public abstract Pieza getPieza();
 
     public static final class LosaVacia extends Losa {
 
@@ -56,7 +56,7 @@ public abstract class Losa {
         }
 
         @Override
-        public Pieza tomarPieza() {
+        public Pieza getPieza() {
 
             return null;
 
@@ -83,7 +83,7 @@ public abstract class Losa {
         }
 
         @Override
-        public Pieza tomarPieza() {
+        public Pieza getPieza() {
             return this.piezaEnLosa;
 
         }
