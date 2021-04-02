@@ -12,7 +12,7 @@ public class Compra {
 
     // Variables Locales
 
-    int option = 0;
+    int opcion = 0;
     int cantidad = 0;
 
     // Atributos
@@ -67,9 +67,9 @@ public class Compra {
 
         JOptionPane.showMessageDialog(null, "Qué desea comprar?");
         do {
-            option = Integer.parseInt(JOptionPane.showInputDialog(
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(
                     "\n1. Cardioaspirinas" + "\n2. Acetaminofen" + "\n3. Pastillas de Ibuprofeno" + "\n0. Salir"));
-            switch (option) {
+            switch (opcion) {
             case 1: {
                 cantidad = Integer.parseInt(JOptionPane.showInputDialog("¿Cuántas Cardioaspirinas desea?"));
                 setSubtotal(subtotal + (cantidad * 500));
@@ -93,20 +93,20 @@ public class Compra {
             } // Fin Case 3: Agregar Pastillas de Ibuprofeno
             default: {
                 JOptionPane.showMessageDialog(null, "Gracias por utilizar Farmatica Virtual!");
-                option = 0;
+                opcion = 0;
                 break;
             } // Fin Switch Comprar Productos
             }
-        } while (option != 0);
+        } while (opcion != 0);
 
     } // Fin agregarCarrito() Method
 
     public void removerCarrito() {
         JOptionPane.showMessageDialog(null, "Qué desea eliminar?");
         do {
-            option = Integer.parseInt(JOptionPane.showInputDialog(
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(
                     "\n1. Cardioaspirinas" + "\n2. Acetaminofen" + "\n3. Pastillas de ibuprofeno" + "\n0. Salir"));
-            switch (option) {
+            switch (opcion) {
             case 1: {
                 if (getCardioaspirina() != 0) {
                     cantidad = Integer
@@ -178,11 +178,11 @@ public class Compra {
             } // Fin Case 3: Eliminar Pastillas ibuprofeno
             default: {
                 JOptionPane.showMessageDialog(null, "Gracias por utilizar Farmatica Virtual!");
-                option = 0;
+                opcion = 0;
                 break;
             }
             }
-        } while (option != 0);
+        } while (opcion != 0);
     } // Fin removerCarrito() Method
 
     public void listaCarrito() {
