@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
         Persona usuario = new Persona();
-        Admin admin = new Admin();
+        Admin admin = new Admin(1, "admin", "admin");
         HojaMedica carta = new HojaMedica();
         Compra compra = new Compra();
         Factura factura = new Factura();
