@@ -3,7 +3,8 @@ package com.mycompany.proyectoprogramacion;
 
 /**
  *
- * @author hudso
+ * @author Hudson
+ * @author Ricardo
  */
 public class Compra {
 
