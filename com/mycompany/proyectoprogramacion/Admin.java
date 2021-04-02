@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author hudson
+ * @author Hudson
  * @author Ricardo
  */
 public class Admin {
