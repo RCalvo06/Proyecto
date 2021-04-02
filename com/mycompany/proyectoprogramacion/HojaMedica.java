@@ -36,9 +36,9 @@ public class HojaMedica {
         //Preguntas a responder de los tipos de padecimientos
         
        //pregunta1 consultar para desarrollar metodo verificarConsejo
-        pregunta2 = JOptionPane.showInputDialog("Cúal es su tipo de sangre?");
-        pregunta3 = JOptionPane.showInputDialog("Cúal es su estatura? ");
-        pregunta4 = JOptionPane.showInputDialog("Cúal es su tipo de peso?");
+        pregunta2 = JOptionPane.showInputDialog("¿Cúal es su tipo de sangre?");
+        pregunta3 = JOptionPane.showInputDialog("¿Cúal es su estatura en cm? ");
+        pregunta4 = JOptionPane.showInputDialog("¿Cúal es su peso en Kg?");
     } //Fin cartaMedica() Method
     
     public void verificarConsejo(){

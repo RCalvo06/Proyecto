@@ -69,8 +69,8 @@ public class Persona {
     } //Fin verericarLogin() Method
     
     public void registro() {
-        setNombre(JOptionPane.showInputDialog("Cúal es su nombre?"));
-        setApellido(JOptionPane.showInputDialog("Cúal es su apellido?"));
+        setNombre(JOptionPane.showInputDialog("¿Cúal es su nombre?"));
+        setApellido(JOptionPane.showInputDialog("¿Cúal es su apellido?"));
         setUsuario(JOptionPane.showInputDialog("Escriba un nombre de usuario"));
         setPassword(JOptionPane.showInputDialog("Escriba una contraseña"));
     }

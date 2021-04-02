@@ -3,15 +3,16 @@ package com.mycompany.proyectoprogramacion;
 
 /**
  *
- * @author hudso
+ * @author hudson
+ * @author Ricardo
  */
 public class Cliente {
-    private int Idcliente;
+    private int idCliente;
     private float dinero;
 
     // Constructor
-    public Cliente(int Idcliente, float dinero) {
-        this.Idcliente = Idcliente;
+    public Cliente(int idCliente, float dinero) {
+        this.idCliente = idCliente;
         this.dinero = dinero;
     }
 
@@ -20,11 +21,11 @@ public class Cliente {
 
     // Getter and Setter
     public int getIdcliente() {
-        return Idcliente;
+        return idCliente;
     }
 
-    public void setIdcliente(int Idcliente) {
-        this.Idcliente = Idcliente;
+    public void setIdcliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public float getDinero() {
