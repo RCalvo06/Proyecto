@@ -2,12 +2,9 @@
 package com.mycompany.proyectoprogramacion;
 
 /**
- *
-<<<<<<< HEAD
- * @author hudson
-=======
+ * 
  * @author Hudson
->>>>>>> 10ed321706df5251a77a69ad9dc888bb83727a95
+ * 
  * @author Ricardo
  */
 public class Cliente {
