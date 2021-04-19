@@ -9,27 +9,29 @@ import javax.swing.JOptionPane;
  * @author Ricardo
  */
 public class Compra {
-
-    // Variables Locales
-
-    int option = 0;
-    int cantidad = 0;
-
-    // Atributos
-
+    
+    //Atributos
+    
     private static float subtotal;
     private static int cardioaspirina;
     private static int acetaminofen;
     private static int ibuprofeno;
-
-    // Constructor
+    
+    //Constructor
 
     public Compra() {
-        // Constructor para llamar desde menu
     }
-
-    // Getter and Setter
-
+    
+    public Compra(float subtotal, int cardioaspirina,int aceacetaminofen,int ibuprofeno){
+        this.subtotal=subtotal;
+        this.cardioaspirina=cardioaspirina;
+        this.acetaminofen=aceacetaminofen;
+        this.ibuprofeno=ibuprofeno;
+        
+    }
+       
+    //Getter and Setter
+    
     public float getSubtotal() {
         return subtotal;
     }
@@ -57,140 +59,131 @@ public class Compra {
     public int getIbuprofeno() {
         return ibuprofeno;
     }
-
+    
     public void setIbuprofeno(int ibuprofeno) {
         this.ibuprofeno = ibuprofeno;
     }
-
-    // Métodos
+    
+    
+    //Métodos
     public void agregarCarrito() {
-
+        int cantidad;
+        int opcion;
         JOptionPane.showMessageDialog(null, "Qué desea comprar?");
+        
         do {
-            option = Integer.parseInt(JOptionPane.showInputDialog(
-                    "\n1. Cardioaspirinas" + "\n2. Acetaminofen" + "\n3. Pastillas de Ibuprofeno" + "\n0. Salir"));
-            switch (option) {
-            case 1: {
-                cantidad = Integer.parseInt(JOptionPane.showInputDialog("¿Cuántas Cardioaspirinas desea?"));
-                setSubtotal(subtotal + (cantidad * 500));
-                setCardioaspirina(cardioaspirina + cantidad);
-                JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
-                break;
-            } // Fin Case 1: Agregar Cardioaspirinas
-            case 2: {
-                cantidad = Integer.parseInt(JOptionPane.showInputDialog("¿Cuántas acetaminofen desea?"));
-                setSubtotal(subtotal + (cantidad * 5000));
-                setAcetaminofen(acetaminofen + cantidad);
-                JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
-                break;
-            } // Fin Case 2: Agregar Acetaminofen
-            case 3: {
-                cantidad = Integer.parseInt(JOptionPane.showInputDialog("¿Cuántas Pastillas de ibuprofeno desea?"));
-                setSubtotal(subtotal + (cantidad * 7000));
-                setIbuprofeno(ibuprofeno + cantidad);
-                JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
-                break;
-            } // Fin Case 3: Agregar Pastillas de Ibuprofeno
-            default: {
-                JOptionPane.showMessageDialog(null, "Gracias por utilizar Farmatica Virtual!");
-                option = 0;
-                break;
-            } // Fin Switch Comprar Productos
+            opcion = Integer.parseInt(JOptionPane.showInputDialog("\n1. cardioaspirina" + "\n2. acetaminofen" + "\n3. ibuprofeno" + "\n0. Salir"));
+            switch(opcion) {
+                case 1: {
+                    cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cúantas cardioaspirina desea?"));
+                    setSubtotal(subtotal + (cantidad * 500));
+                    setCardioaspirina(cardioaspirina + cantidad);
+                    JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                    break;
+                } //Fin Case 1: Agregar Mascarillas
+                case 2: {
+                    cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cúantas acetaminofen desea?"));
+                    setSubtotal(subtotal + (cantidad * 5000));
+                    setAcetaminofen(acetaminofen + cantidad);
+                    JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                    break;
+                } //Fin Case 2: Agregar Bombas de Sabutamol
+                case 3: {
+                    cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cúantas ibuprofeno desea?"));
+                    setSubtotal(subtotal + (cantidad * 7000));
+                    setIbuprofeno(ibuprofeno + cantidad);
+                    JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                    break;
+                } //Fin Case 3: Agregar Pastillas de Paracetamol
+                default: {
+                    JOptionPane.showMessageDialog(null, "Gracias por utilizar nuestro servicio!");
+                    opcion = 0;
+                    break;
+                } //Fin Switch Comprar Productos
             }
-        } while (option != 0);
-
-    } // Fin agregarCarrito() Method
-
+        }while(opcion != 0);
+    } //Fin agregarCarrito() Method
+    
     public void removerCarrito() {
+        int cantidad;
+        int opcion;
         JOptionPane.showMessageDialog(null, "Qué desea eliminar?");
         do {
-            option = Integer.parseInt(JOptionPane.showInputDialog(
-                    "\n1. Cardioaspirinas" + "\n2. Acetaminofen" + "\n3. Pastillas de ibuprofeno" + "\n0. Salir"));
-            switch (option) {
-            case 1: {
-                if (getCardioaspirina() != 0) {
-                    cantidad = Integer
-                            .parseInt(JOptionPane.showInputDialog("¿Cuantas Cardioaspirinas desea eliminar?"));
-                    if (cantidad > getCardioaspirina()) {
-                        JOptionPane.showMessageDialog(null, "Disculpe, no posee tantas Cardioaspirinas");
-                    } else {
-                        if (cantidad > 1) {
-                            JOptionPane.showMessageDialog(null,
-                                    "Se eliminaron " + cantidad + " Cardioaspirinas del carrito");
+            opcion = Integer.parseInt(JOptionPane.showInputDialog("\n1. cardioaspirinas " + "\n2. acetaminofen" + "\n3. ibuprofeno" + "\n0. Salir"));
+            switch(opcion) {
+                case 1: {
+                    if(getCardioaspirina() != 0) {
+                        cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cuantas cardioaspirinas desea eliminar?"));
+                        if(cantidad > getCardioaspirina()) {
+                            JOptionPane.showMessageDialog(null, "Disculpe, no posee tantas cardioaspirinas");
                         } else {
-                            JOptionPane.showMessageDialog(null,
-                                    "Se eliminó " + cantidad + " Cardioaspirinas del carrito");
-                        }
-                        setSubtotal(getSubtotal() - (cantidad * 500));
-                        setCardioaspirina(getCardioaspirina() - cantidad);
-                        JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "No tiene Cardioaspirinas dentro del carrito de compras");
-                }
-                break; // Ricardoooooooooooooooooo
-
-            } // Fin Case 1: Eliminar Cardioaspirinas
-            case 2: {
-                if (getAcetaminofen() != 0) {
-                    cantidad = Integer.parseInt(JOptionPane.showInputDialog("¿Cuántas acetaminofen desea eliminar?"));
-                    if (cantidad > getAcetaminofen()) {
-                        JOptionPane.showMessageDialog(null, "Disculpe, no posee tantas acetaminofen");
+                            if(cantidad > 1) {
+                                JOptionPane.showMessageDialog(null, "Se eliminaron " + cantidad + " cardioaspirinas del carrito");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Se eliminó " + cantidad + " cardioaspirinas del carrito");
+                            }
+                            setSubtotal(getSubtotal() - (cantidad * 500));
+                            setCardioaspirina(getCardioaspirina() - cantidad);
+                            JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                        }                     
                     } else {
-                        if (cantidad > 1) {
-                            JOptionPane.showMessageDialog(null,
-                                    "Se eliminaron " + cantidad + " acetaminofen del carrito");
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Se eliminó " + cantidad + " acetaminofen del carrito");
-                        }
-                        setSubtotal(getSubtotal() - (cantidad * 5000));
-                        setAcetaminofen(getAcetaminofen() - cantidad);
-                        JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                        JOptionPane.showMessageDialog(null, "No tiene cardioaspirinas dentro del carrito de compras");
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null, "No tiene acetaminofen dentro del carrito de compras");
-                }
-                break;
-            } // Fin Case 2: Eliminar acetaminofen
-            case 3: {
-                if (getIbuprofeno() != 0) {
-                    cantidad = Integer
-                            .parseInt(JOptionPane.showInputDialog("¿Cuántas pastillas de ibuprofeno desea eliminar?"));
-                    if (cantidad > getIbuprofeno()) {
-                        JOptionPane.showMessageDialog(null, "Disculpe, no posee tantas pastillas de ibuprofeno");
+                    break;
+                } 
+                case 2: {
+                    if(getAcetaminofen() != 0) {
+                        cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cúantas acetaminofen desea eliminar?"));
+                        if(cantidad > getAcetaminofen()) {
+                            JOptionPane.showMessageDialog(null, "Disculpe, no posee tantas acetaminofen");
+                        } else {
+                            if(cantidad > 1) {
+                                JOptionPane.showMessageDialog(null, "Se eliminaron " + cantidad + " acetaminofen del carrito");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Se eliminó " + cantidad + " acetaminofen del carrito");
+                            }
+                            setSubtotal(getSubtotal() - (cantidad * 5000));
+                            setAcetaminofen(getAcetaminofen() - cantidad);
+                            JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                        }                     
                     } else {
-                        if (cantidad > 1) {
-                            JOptionPane.showMessageDialog(null,
-                                    "Se eliminaron " + cantidad + " pastillas de ibuprofeno del carrito");
-                        } else {
-                            JOptionPane.showMessageDialog(null,
-                                    "Se eliminó " + cantidad + " pastilla de ibuprofeno del carrito");
-                        }
-                        setSubtotal(getSubtotal() - (cantidad * 7000));
-                        setIbuprofeno(getIbuprofeno() - cantidad);
-                        JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                        JOptionPane.showMessageDialog(null, "No tiene acetaminofen dentro del carrito de compras");
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null,
-                            "No tiene pastillas de ibuprofeno dentro del carrito de compras");
+                    break;
+                } 
+                case 3: {
+                    if(getIbuprofeno() != 0) {
+                        cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cúantas ibuprofeno desea eliminar?"));
+                        if(cantidad > getIbuprofeno()) {
+                            JOptionPane.showMessageDialog(null, "Disculpe, no posee tantas ibuprofeno");
+                        } else {
+                            if(cantidad > 1) {
+                                JOptionPane.showMessageDialog(null, "Se eliminaron " + cantidad + " ibuprofeno del carrito");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Se eliminó " + cantidad + " ibuprofeno del carrito");
+                            }
+                            setSubtotal(getSubtotal() - (cantidad * 7000));
+                            setIbuprofeno(getIbuprofeno() - cantidad);
+                            JOptionPane.showMessageDialog(null, "Su cuenta es: ₡" + getSubtotal());
+                        }                     
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No tiene ibuprofeno dentro del carrito de compras");
+                    }
+                    break;
+                } 
+                default: {
+                    JOptionPane.showMessageDialog(null, "Gracias por utilizar el servicio!");
+                    opcion = 0;
+                    break;
                 }
-                break;
-            } // Fin Case 3: Eliminar Pastillas ibuprofeno
-            default: {
-                JOptionPane.showMessageDialog(null, "Gracias por utilizar Farmatica Virtual!");
-                option = 0;
-                break;
             }
-            }
-        } while (option != 0);
-    } // Fin removerCarrito() Method
-
+        }while(opcion != 0);
+    } //Fin removerCarrito() Method
+    
     public void listaCarrito() {
-
-        JOptionPane.showMessageDialog(null,
-                "********CARRITO DE COMPRAS********" + "\nTiene: " + getCardioaspirina() + " Cardioaspirina/s"
-                        + "\nTiene: " + getAcetaminofen() + " Antibiótico/s" + "\nTiene: " + getIbuprofeno()
-                        + " Vacuna/s para Influencia");
-    } // Fin listaCarrito() Method
-
+        {
+        JOptionPane.showMessageDialog(null, "********CARRITO DE COMPRAS********" + "\nTiene: " + getCardioaspirina() + " Mascarilla/s" + "\nTiene: " + getAcetaminofen() + " Antibiótico/s" + "\nTiene: " + getIbuprofeno() + " Vacuna/s para Influencia");
+    }
+    } //Fin listaCarrito() Method
+    
 }
