@@ -93,22 +93,13 @@ public class Admin {
         int eliminar = Integer.parseInt(JOptionPane.showInputDialog("Digite el ID del producto que desea eliminar"));
         if (eliminar == 1) {
             JOptionPane.showMessageDialog(null, "Se eliminaron las cardioaspirina");
-            JOptionPane.showMessageDialog(null,
-                    "\nNombre: " + acetaminofen.getProducto() + "\nPrecio: " + acetaminofen.getPrecio());
-            JOptionPane.showMessageDialog(null,
-                    "\nNombre: " + ibuprofeno.getProducto() + "\nPrecio: " + ibuprofeno.getPrecio());
+            
         } else if (eliminar == 2) {
             JOptionPane.showMessageDialog(null, "Se eliminaron las acetaminofen");
-            JOptionPane.showMessageDialog(null,
-                    "\nNombre: " + cardioaspirina.getProducto() + "\nPrecio: " + cardioaspirina.getPrecio());
-            JOptionPane.showMessageDialog(null,
-                    "\nNombre: " + ibuprofeno.getProducto() + "\nPrecio: " + ibuprofeno.getPrecio());
+            
         } else if (eliminar == 3) {
             JOptionPane.showMessageDialog(null, "Se eliminaron las ibuprofeno");
-            JOptionPane.showMessageDialog(null,
-                    "\nNombre: " + cardioaspirina.getProducto() + "\nPrecio: " + cardioaspirina.getPrecio());
-            JOptionPane.showMessageDialog(null,
-                    "\nNombre: " + acetaminofen.getProducto() + "\nPrecio: " + acetaminofen.getPrecio());
+            
         } else {
             JOptionPane.showMessageDialog(null, "El ID que se digito no existe");
         }
