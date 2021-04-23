@@ -182,7 +182,7 @@ public class Compra {
     
     public void listaCarrito() {
         {
-        JOptionPane.showMessageDialog(null, "********CARRITO DE COMPRAS********" + "\nTiene: " + getCardioaspirina() + " Mascarilla/s" + "\nTiene: " + getAcetaminofen() + " Antibiótico/s" + "\nTiene: " + getIbuprofeno() + " Vacuna/s para Influencia");
+        JOptionPane.showMessageDialog(null, "********CARRITO DE COMPRAS********" + "\nTiene: " + getCardioaspirina() + " Cardioaspirinas/s" + "\nTiene: " + getAcetaminofen() + " Acetaminofen/s" + "\nTiene: " + getIbuprofeno() + " Ibuprofeno");
     }
     } //Fin listaCarrito() Method
     

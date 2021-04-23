@@ -81,7 +81,6 @@ public class Factura {
             setTotal(carro.getSubtotal() - (carro.getSubtotal() * getDescuento()));
             setTotal(getTotal() + (getTotal() * getImpuestos()));
             JOptionPane.showMessageDialog(null, "********FACTURA DE COMPRAS********" + "\nTiene: " + carro.getCardioaspirina() + " Mascarilla/s" + "\nTiene: " + carro.getAcetaminofen() + " Antibiótico/s" + "\nTiene: " + carro.getIbuprofeno() + " Vacuna/s para Influencia" + "\nSubtotal: ₡" + carro.getSubtotal() + "\nImpuestos: " + getImpuestos() + "%" + "\nDescuento: " + getDescuento() + "%" +  "\n********TOTAL DE COMPRAS********" +"\nTotal: ₡" + getTotal());
-        
+        }
     }
-}
 }
