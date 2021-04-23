@@ -98,13 +98,13 @@ public class Admin {
             JOptionPane.showMessageDialog(null,
                     "\nNombre: " + ibuprofeno.getProducto() + "\nPrecio: " + ibuprofeno.getPrecio());
         } else if (eliminar == 2) {
-            JOptionPane.showMessageDialog(null, "Se eliminaron las bombas de salbutamol");
+            JOptionPane.showMessageDialog(null, "Se eliminaron las acetaminofen");
             JOptionPane.showMessageDialog(null,
                     "\nNombre: " + cardioaspirina.getProducto() + "\nPrecio: " + cardioaspirina.getPrecio());
             JOptionPane.showMessageDialog(null,
                     "\nNombre: " + ibuprofeno.getProducto() + "\nPrecio: " + ibuprofeno.getPrecio());
         } else if (eliminar == 3) {
-            JOptionPane.showMessageDialog(null, "Se eliminaron las pastillas de paracetamol");
+            JOptionPane.showMessageDialog(null, "Se eliminaron las ibuprofeno");
             JOptionPane.showMessageDialog(null,
                     "\nNombre: " + cardioaspirina.getProducto() + "\nPrecio: " + cardioaspirina.getPrecio());
             JOptionPane.showMessageDialog(null,
