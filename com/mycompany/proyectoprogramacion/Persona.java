@@ -66,17 +66,7 @@ public class Persona {
     
     //Metodos
     public void verificarLogin(String nombre, String password) {
-        int opcion = 0;
-        do{
-            String username = JOptionPane.showInputDialog("Escriba su nombre de usuario");
-            String pass = JOptionPane.showInputDialog("Escriba su contraseña");
-                if(username.equals(nombre) && pass.equals(password)) {
-                    JOptionPane.showMessageDialog(null, "Bienvenido " + getNombre());
-                    opcion = 1;
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error de autentificacion, intente de nuevo");
-                }
-        }while (opcion != 1);
+        
     } //Fin verericarLogin() Method
     
     public void registro() {
