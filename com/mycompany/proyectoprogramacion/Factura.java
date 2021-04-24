@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.proyectoprogramacion;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author Hudson
@@ -64,6 +64,23 @@ public class Factura {
     }
 
     public void facturarCompra(){
-        
+        Compra carro = new Compra();
+        if(carro.getCardioaspirina() == 0 && carro.getAcetaminofen() == 0 && carro.getIbuprofeno() == 0) {
+            JOptionPane.showMessageDialog(null, "Disculpe, no tiene ningún artículo dentro del carrito de compras");
+        } else {
+            if(carro.getCardioaspirina() > 5) {
+                JOptionPane.showMessageDialog(null, "Por comprar más de 5 cardioaspirinas obtiene un 2% de descuento en sus compras");
+                setDescuento((float) 0.02);
+            } else if(carro.getAcetaminofen() > 3){
+                JOptionPane.showMessageDialog(null, "Por comprar más de 3 acetaminofen obtiene un 4% de descuento en sus compras");
+                setDescuento((float) 0.04);
+            } else if(carro.getIbuprofeno()> 7){
+                JOptionPane.showMessageDialog(null, "Por comprar más de 7 ibuprofeno obtiene un 12% de descuento en sus compras");
+                setDescuento((float) 0.12);
+            }
+            setTotal(carro.getSubtotal() - (carro.getSubtotal() * getDescuento()));
+            setTotal(getTotal() + (getTotal() * getImpuestos()));
+            JOptionPane.showMessageDialog(null, "********FACTURA DE COMPRAS********" + "\nTiene: " + carro.getCardioaspirina() + " Cardioaspirina/s" + "\nTiene: " + carro.getAcetaminofen() + " Acetaminofen/s" + "\nTiene: " + carro.getIbuprofeno() + " Ibuprofeno/s" + "\nSubtotal: ₡" + carro.getSubtotal() + "\nImpuestos: " + getImpuestos() + "%" + "\nDescuento: " + getDescuento() + "%" +  "\n********TOTAL DE COMPRAS********" +"\nTotal: ₡" + getTotal());
+        }
     }
 }
